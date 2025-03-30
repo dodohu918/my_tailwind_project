@@ -1,10 +1,22 @@
 // seed.js
+require('dotenv').config();
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('clinic_schedule', 'postgres', 'anthonyfromtw', {
-  host: 'localhost',
-  dialect: 'postgres',
+const connectionString = process.env.DATABASE_URL;
+const sequelize = new Sequelize(connectionString, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
   logging: false,
 });
+// const sequelize = new Sequelize('clinic_schedule', 'postgres', 'anthonyfromtw', {
+//   host: 'localhost',
+//   dialect: 'postgres',
+//   logging: false,
+// });
 
 const Doctor = sequelize.define('Doctor', {
     name: {

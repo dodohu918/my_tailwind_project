@@ -18,7 +18,7 @@ export const FormProvider = ({ children }) => {
 
     try {
       // Post partial answer to your backend
-      await fetch('http://localhost:4000/api/answers', {
+      await fetch('https://my-tailwind-project.onrender.com/api/answers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: questionKey, answer: answerValue }),

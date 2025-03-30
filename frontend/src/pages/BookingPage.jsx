@@ -13,7 +13,7 @@ function BookingPage() {
 
   const handleConfirm = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/bookAppointment', {
+      const response = await fetch('https://my-tailwind-project.onrender.com/api/bookAppointment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
