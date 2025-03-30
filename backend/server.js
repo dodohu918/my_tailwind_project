@@ -10,11 +10,12 @@ app.use(express.json());
 
 // Temporary in-memory storage
 let userAnswers = {};
-// const allDoctors = [
-//   { id:1, name:"Dr. Urgent", condition:"URGENT", location:"North California" },
-//   { id:2, name:"Dr. Chill", condition:"NOT_URGENT", location:"San Francisco" },
-//   // ...
-// ];
+
+// const sequelize = new Sequelize('clinic_schedule', 'postgres', 'anthonyfromtw', {
+//   host: 'localhost',
+//   dialect: 'postgres',
+//   logging: false,
+// });
 
 const sequelize = new Sequelize(connectionString, {
   dialect: "postgres",
