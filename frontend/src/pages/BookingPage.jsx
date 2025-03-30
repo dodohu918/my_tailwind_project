@@ -41,7 +41,7 @@ function BookingPage() {
 
   return (
     <div className="bg-gray-100 min-h-screen flex justify-center items-center flex-col p-4">
-      <h2 className="text-2xl font-bold mb-4">Booking Confirmation</h2>
+      <h2 className="text-2xl text-blue-700 font-bold mb-4">Booking Confirmation</h2>
 
       {/* Display chosen doctor info */}
       <div className="bg-white p-4 text-blue-700 rounded shadow-md w-full max-w-md mb-4">
