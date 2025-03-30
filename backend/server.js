@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const { Sequelize, DataTypes } = require('sequelize');
-
+const connectionString = process.env.DATABASE_URL; 
+require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
@@ -15,10 +16,15 @@ let userAnswers = {};
 //   // ...
 // ];
 
-const sequelize = new Sequelize('clinic_schedule', 'postgres', 'anthonyfromtw', {
-  host: 'localhost',
-  dialect: 'postgres',
-  logging: false, // optional, to disable SQL logging
+const sequelize = new Sequelize(connectionString, {
+  dialect: "postgres",
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+  logging: false,
 });
 
 const Doctor = sequelize.define('Doctor', {

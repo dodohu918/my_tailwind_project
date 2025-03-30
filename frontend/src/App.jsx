@@ -5,7 +5,7 @@ import { FormProvider } from './context/FormContext';
 import Q1 from './pages/question_1';
 import Q2 from './pages/question_2';
 import Q3 from './pages/question_3';
-import Output from './pages/output';
+import Output from './pages/Output';
 import BookingPage from './pages/BookingPage';
 import LandingPage from './pages/LandingPage';
 
