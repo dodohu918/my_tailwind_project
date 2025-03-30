@@ -10,7 +10,7 @@ const Output = () => {
     // Example: fetch a list of doctors from the backend, passing user answers
     const fetchDoctors = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/doctors', {
+        const response = await fetch('https://my-tailwind-project.onrender.com/api/doctors', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
